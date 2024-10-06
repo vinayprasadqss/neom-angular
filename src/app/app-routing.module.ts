@@ -7,9 +7,10 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./feature-modules/auth/auth.module').then(m => m.AuthModule) },
   { path: 'dashboard', loadChildren: () => import('./feature-modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
 
-  { path: '', redirectTo: '/auth', pathMatch: 'full' }, // Redirect to dashboard as the default route
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirect to dashboard as the default route
 
   { path: 'about', component: AboutComponent },
+  { path: '**', redirectTo: '/dashboard', pathMatch: 'full' }
   
  
 ];
